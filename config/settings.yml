@@ -1,0 +1,4 @@
+plugins:
+  topic_cta_enabled:
+    default: false
+    client: true

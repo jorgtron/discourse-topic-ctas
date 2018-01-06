@@ -1,0 +1,39 @@
+div.topic-cta-container{
+  max-width: 755px;
+  position: relative;
+
+  button.dismiss-topic-cta{
+    
+    position: absolute;
+    right:0;
+    right: -15px;
+    top: 5px;
+    
+  }
+
+  div.topic-cta{
+    border-top: 1px solid $primary-low;
+    text-align: center;
+
+    .example-cta{
+      background-color: $tertiary;
+      overflow:auto;
+      margin: 10px;
+      border-radius: 5px;
+      p{
+        color: $secondary;
+
+        a{
+          display: inline-block;
+          margin:0 20px;
+          color: $tertiary;
+          background-color: $secondary;
+          border-radius: 3px;
+          padding: 5px;
+        }
+      }
+
+    }
+
+  }
+}

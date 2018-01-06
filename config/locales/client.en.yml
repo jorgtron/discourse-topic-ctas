@@ -1,0 +1,42 @@
+en:
+  js:
+    topic_cta:
+      dismiss: Don't show this again
+      menu_title: Topic CTA
+      edit_title: Edit Topic Calls to Action
+      save: Save
+      delete: Delete
+      fields:
+        name: Name
+        enabled: Enable this CTA?
+        show_on_last: Always show this CTA on the last post of the topic
+        start_at: Start showing CTA at post number
+        show_every: Show CTA every N posts
+        start_datetime: Start showing CTA after this date/time (UTC)
+        end_datetime: Stop showing CTA after this date/time (UTC)
+        start_time: Time of day to start showing this CTA (UTC)
+        end_time: Time of day to stop showing this CTA (UTC)
+        content: HTML content
+        target: Target topics matching criteria
+        target_topic: Topic ID
+        target_category: "Select a category:"
+        target_tags: "Display CTA on topics with any of these tags:"
+        show_to_groups: "Only show this CTA to members of these groups (blank for all):"
+        hide_from_groups: "Hide this CTA from members of these groups:"
+      preview_title: Preview
+      new_cta: New CTA
+      sections:
+        location_in_topic: Position in Topic
+        timings: Timings
+        content: CTA Content
+        target: Target Topics
+        users: Target Users
+      target:
+        all: All Topics
+        topic: Specific Topic
+        category: Category
+        tag: Tag
+      placeholders:
+        show_to_groups: Select groups...
+        hide_from_groups: Select groups...
+        target_tags: Select tags...

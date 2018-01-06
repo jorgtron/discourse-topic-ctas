@@ -1,0 +1,29 @@
+<div class='row groups topic-cta-admin'>
+  
+  <div class='content-list span6'>
+    <h3>{{i18n 'topic_cta.edit_title'}}</h3>
+    <ul>
+      {{#each model as |definition|}}
+        <li>
+          {{#link-to "adminPlugins.topic-cta.cta-definition" definition.id}}
+            {{#if definition.enabled}}
+              {{d-icon 'check-square-o'}}
+            {{else}}
+              {{d-icon 'square-o'}}
+            {{/if}}
+            {{definition.name}}
+            
+
+          {{/link-to}}
+        </li>
+      {{/each}}
+    </ul>
+    <div class="new-button-container">
+      {{d-button action="create" icon="plus" label="topic_cta.new_cta"}}     
+    </div>
+  </div>
+
+  <div class="span13">
+    {{outlet}}
+  </div>
+</div>

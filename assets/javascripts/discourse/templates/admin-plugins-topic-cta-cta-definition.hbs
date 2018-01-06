@@ -1,0 +1,142 @@
+<form {{action "save" on="submit"}} class="form-horizontal topic-cta-form">
+
+  <div class='buttons'>
+    <button {{action "save"}} disabled={{disableSave}} class='btn btn-primary'>{{i18n 'topic_cta.save'}}</button>
+    
+    <button {{action "destroy"}} class='btn btn-danger'>{{d-icon "trash-o"}}{{i18n 'topic_cta.delete'}}</button>
+
+  </div>
+
+
+  <div>
+    <label for='name'>{{i18n "topic_cta.fields.name"}}</label>
+    {{text-field 
+      name='name'
+      value=model.name}}
+  </div>
+
+  <div>
+    <label>
+      {{input type="checkbox"
+          checked=model.enabled }}
+
+      {{i18n 'topic_cta.fields.enabled'}}
+    </label>
+  </div>
+
+  <hr/>
+  <h3>{{i18n 'topic_cta.sections.target'}}</h3>
+
+  <div>
+    <label for='target'>{{i18n "topic_cta.fields.target"}}</label>
+    {{combo-box name="target" content=model.available_targets value=model.target}}
+  </div>
+
+  {{#if model.isTargetTopic}}
+    <div>
+      <label for='target_id'>{{i18n "topic_cta.fields.target_topic"}}</label>
+      {{input value=model.target_id type="number" min="1"}}
+    </div>
+  {{/if}}
+
+  {{#if model.isTargetCategory}}
+    <div>
+      <label for='target_id'>{{i18n "topic_cta.fields.target_category"}}</label>
+      {{category-chooser
+              name="target_id"
+              value=model.target_id
+              rootNone=false
+          }}
+    </div>
+  {{/if}}
+
+  {{#if model.isTargetTag}}
+    <div>
+      <label for='target_id'>{{i18n "topic_cta.fields.target_tags"}}</label>
+      {{tag-chooser placeholderKey="topic_cta.placeholders.target_tags" name="target_tags" tags=model.target_tags}}
+    </div>
+  {{/if}}
+
+              
+
+
+  <hr/>
+  <h3>{{i18n 'topic_cta.sections.location_in_topic'}}</h3>
+  <div>
+    <label>
+      {{input type="checkbox"
+          checked=model.show_on_last }}
+
+      {{i18n 'topic_cta.fields.show_on_last'}}
+    </label>
+  </div>
+
+  <div>
+    <label for='start_at'>{{i18n "topic_cta.fields.start_at"}}</label>
+    {{input value=model.start_at type="number" min="1"}}
+  </div>
+
+  <div>
+    <label for='show_every'>{{i18n "topic_cta.fields.show_every"}}</label>
+    {{input value=model.show_every type="number" min="1"}}
+  </div>
+
+  <hr/>
+  <h3>{{i18n 'topic_cta.sections.timings'}}</h3>
+  <div>
+    <label for='start_datetime'>{{i18n "topic_cta.fields.start_datetime"}}</label>
+    {{input type="datetime-local" value=model.start_datetime}}
+  </div>
+
+  <div>
+    <label for='end_datetime'>{{i18n "topic_cta.fields.end_datetime"}}</label>
+    {{input type="datetime-local" value=model.end_datetime}}
+  </div>
+
+  <div>
+    <label for='start_time'>{{i18n "topic_cta.fields.start_time"}}</label>
+    {{input type="time" value=model.start_time}}
+  </div>
+
+  <div>
+    <label for='end_time'>{{i18n "topic_cta.fields.end_time"}}</label>
+    {{input type="time" value=model.end_time}}
+  </div>
+
+  <hr/>
+  <h3>{{i18n 'topic_cta.sections.users'}}</h3>
+  
+  <div>
+    <label for='show_to_groups'>{{i18n "topic_cta.fields.show_to_groups"}}</label>
+    {{group-selector groupFinder=groupFinder groupNames=model.show_to_group_names placeholderKey="topic_cta.placeholders.show_to_groups"}}
+  </div>
+
+  <div>
+    <label for='hide_from_groups'>{{i18n "topic_cta.fields.hide_from_groups"}}</label>
+    {{group-selector groupFinder=groupFinder groupNames=model.hide_from_group_names placeholderKey="topic_cta.placeholders.hide_from_groups"}}
+  </div>
+
+  <hr/>
+  <h3>{{i18n 'topic_cta.sections.content'}}</h3>
+
+  <div>
+    <label>
+      {{i18n 'topic_cta.fields.content'}}
+    </label>  
+    {{textarea value=model.content cols="100" rows="6"}}
+  
+  </div>
+
+
+
+
+</form>
+
+<h3>{{i18n 'topic_cta.preview_title'}}</h3>
+<div class="topic-cta-preview">
+  <div class="topic-cta-container">
+    <div class="topic-cta">
+      {{{checkedContent}}}
+    </div>
+  </div>
+</div>

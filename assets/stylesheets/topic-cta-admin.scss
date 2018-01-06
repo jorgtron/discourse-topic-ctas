@@ -1,0 +1,26 @@
+.topic-cta-admin{
+  .topic-cta-preview{
+    display:block;
+    width: 100%;
+    overflow: hidden;
+    max-height: 1000px;
+    border: 2px dashed black;
+  }
+
+  .new-button-container
+  {
+    margin-top: 10px;
+  }
+
+  .topic-cta-large-icon{
+    text-align: center;
+    font-size: 100px;
+    color: $primary-medium; 
+    margin-top: 80px;
+  }
+
+  .topic-cta-form hr{
+    margin-top: 30px;
+  }
+
+}
