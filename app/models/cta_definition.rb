@@ -29,6 +29,7 @@ END
     self.start_at = 2 if self.start_at.nil?
     self.show_every = 3 if self.show_every.nil?
     self.show_on_last = false if self.show_on_last.nil?
+    self.target = 'all' if self.target.nil?
   end
 
   scope :enabled, ->() { where("value::json->>'enabled'='true'") }
