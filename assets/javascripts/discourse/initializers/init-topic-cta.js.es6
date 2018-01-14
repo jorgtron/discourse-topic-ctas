@@ -36,9 +36,9 @@ export default {
       // Extend the post model to include CTA information and methods
       api.includePostAttributes('post_cta');
       api.modifyClass('model:post', {
-        @on('init')
-        setupWatcher(){
-          if(this.get('topic')){
+        @observes('topic')
+        setupWatcher(topic){
+          if(topic){
             this.appEvents.on('topiccta:changed', () => {
               this.setCtas();
             });
