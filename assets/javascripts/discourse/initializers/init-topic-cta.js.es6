@@ -26,7 +26,7 @@ export default {
           const postArray = this.get('posts');
           for(var post of postArray){
             const vis_post_num = this.progressIndexOfPost(post);
-            post.set('last_visible_post', vis_post_num === postArray.length);
+            post.set('last_visible_post', vis_post_num === (postArray.length - 1));
             post.set('visible_post_number', vis_post_num);
           }
         }
